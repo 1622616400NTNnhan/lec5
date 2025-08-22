@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập một số nguyên N (>1): ");
+        int N = sc.nextInt();
+
+        if (N <= 1) {
+            System.out.println("Số phải lớn hơn 1!");
+        } else {
+            boolean isPrime = true;
+
+            for (int i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.println(N + " là số nguyên tố.");
+            } else {
+                System.out.println(N + " không phải là số nguyên tố.");
+            }
+        }
+
+        sc.close();
+    }
+}
