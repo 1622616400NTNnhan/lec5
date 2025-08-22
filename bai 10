@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class IsoscelesTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập chiều cao h: ");
+        int h = sc.nextInt();
+
+        for (int i = 1; i <= h; i++) {
+            // In khoảng trắng trước mỗi dòng
+            for (int j = 1; j <= h - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1 || i == h) {
+                    System.out.print("*"); // viền ngoài hoặc dòng cuối
+                } else {
+                    System.out.print(" "); // rỗng bên trong
+                }
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
